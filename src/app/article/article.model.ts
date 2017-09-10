@@ -19,7 +19,7 @@ export class Article {
 
   // domain() is a utility function that extracts
   // the domain from a URL, which we'll explain shortly
-  domain():string {
+  domain(): string {
     try {
     //  e.g. http://foo.com/path/to/bar
       const domainAndPath: string = this.link.split('//')[1];
