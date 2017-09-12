@@ -34,6 +34,12 @@ export class ProductsListComponent implements OnInit {
     this.onProductSelected = new EventEmitter();
   }
 
+  /**
+   * menampilkan list produck bila di click
+   * logicnya berada di app.component.ts
+   * productWasSelected
+   *
+   */
   clicked(product: Product): void {
     this.currentProduct = product;
     this.onProductSelected.emit(product);
