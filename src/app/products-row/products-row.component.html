@@ -4,5 +4,8 @@
   <div class="meta">
     <div class="product-sku">SKU #{{product.sku}}</div>
   </div>
+  <div class="description">
+    <app-products-department [product]="product"></app-products-department>
+  </div>
 </div>
 <app-price-display [price]="product.price"></app-price-display>
