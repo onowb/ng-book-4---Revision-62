@@ -7,6 +7,9 @@ import { NgClassExampleComponent } from './ng-class-example/ng-class-example.com
 import { NgForExampleComponent } from './ng-for-example/ng-for-example.component';
 import { NgStyleExampleComponent } from './ng-style-example/ng-style-example.component';
 import { NgNonBindableExampleComponent } from './ng-non-bindable-example/ng-non-bindable-example.component';
+import { IntroComponent } from './intro/intro.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { SidebarItemComponent } from './sidebar/sidebar-item.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { NgNonBindableExampleComponent } from './ng-non-bindable-example/ng-non-
     NgClassExampleComponent,
     NgForExampleComponent,
     NgStyleExampleComponent,
-    NgNonBindableExampleComponent
+    NgNonBindableExampleComponent,
+    IntroComponent,
+    SidebarComponent,
+    SidebarItemComponent
   ],
   imports: [
     BrowserModule
