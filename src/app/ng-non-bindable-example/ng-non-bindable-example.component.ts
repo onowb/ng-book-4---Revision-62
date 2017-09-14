@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ng-non-bindable-example.component.css']
 })
 export class NgNonBindableExampleComponent implements OnInit {
+  content: string;
 
-  constructor() { }
+  constructor() {
+    this.content = 'Some text';
+  }
 
   ngOnInit() {
   }
