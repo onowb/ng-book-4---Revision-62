@@ -1,3 +1,19 @@
-<p>
-  demo-form-with-custom-validation works!
-</p>
+<div class="ui raised segment">
+  <h2 class="ui header">Demo Form: with custom validations</h2>
+  <form [formGroup]="myFrom"
+        (ngSubmit)="onSubmit(myFrom.value)"
+        class="ui form"
+        [class.error]="!myFrom.valid && myFrom.touched">
+
+    <div class="field" [class.error]="!sku.valid && sku.touched">
+      <label for="skuInput">SKU</label>
+      <input type="text" id="skuInput" placeholder="SKU" [formControl]="sku">
+      <div class="ui error message" *ngIf="!sku.valid">SKU is invalid</div>
+      <div class="ui error message" *ngIf="sku.hasError('required')">SKU is required</div>
+      <div class="ui error message" *ngIf="sku.hasError('invalidSku')">SKU must begin with <span>123</span></div>
+    </div>
+
+    <div class="ui error message" *ngIf="!myFrom.valid">Form is invalid</div>
+    <button type="submit" class="ui button">Submit</button>
+  </form>
+</div>
