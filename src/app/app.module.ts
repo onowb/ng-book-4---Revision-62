@@ -10,6 +10,8 @@ import { IntroComponent } from './intro/intro.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SidebarItemComponent } from './sidebar/sidebar-item.component';
 
+// import { UserDemoModule } from './user-demo/user-demo.module';
+
 import { ExampleDef } from './example.model';
 import { UserDemoInjectorComponent } from './user-demo/user-demo.injector.component';
 import { UserDemoComponent } from './user-demo/user-demo.component';
@@ -46,7 +48,9 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+
+    // UserDemoModule
   ],
   providers: [
     { provide: APP_BASE_HREF,    useValue: '/' },
