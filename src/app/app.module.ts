@@ -11,6 +11,8 @@ import { ArtistComponent } from './artist/artist.component';
 import { SearchComponent } from './search/search.component';
 import { TrackComponent } from './track/track.component';
 
+import { SPOTIFY_PROVIDERS } from './spotify.service';
+
 const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
   { path: 'search', component: SearchComponent },
@@ -34,6 +36,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes) // <-- routes
   ],
   providers: [
+    SPOTIFY_PROVIDERS,
     {provide: APP_BASE_HREF, useValue: '/'},
     {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
