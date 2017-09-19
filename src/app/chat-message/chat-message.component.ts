@@ -13,15 +13,18 @@ export class ChatMessageComponent implements OnInit {
   currentUser: User;
   incoming: boolean;
 
-  constructor(public UserService: UserService) { }
-
-  ngOnInit(): void {
-    this.UserService.currentUser.subscribe((user: User) => {
-      this.currentUser = user;
-      if (this.message.author && user) {
-        this.incoming = this.message.author.id !== user.id;
-      }
-    });
+  constructor(public UsersService: UserService) {
   }
 
+  ngOnInit(): void {
+    this.UsersService.currentUser
+      .subscribe(
+        (user: User) => {
+          this.currentUser = user;
+          if (this.message.author && user) {
+            this.incoming = this.message.author.id !== user.id;
+          }
+        });
+  }
 }
+

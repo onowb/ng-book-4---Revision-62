@@ -1,5 +1,5 @@
-import {Message} from '../message/message.model';
-import {uuid} from '../util/uuid';
+import { Message } from '../message/message.model';
+import { uuid } from '../util/uuid';
 
 /**
  * Thread represents a group of Users exchanging Messages
@@ -10,7 +10,9 @@ export class Thread {
   name: string;
   avatarSrc: string;
 
-  constructor(id?: string, name?: string, avatarSrc?: string) {
+  constructor(id?: string,
+              name?: string,
+              avatarSrc?: string) {
     this.id = id || uuid();
     this.name = name;
     this.avatarSrc = avatarSrc;

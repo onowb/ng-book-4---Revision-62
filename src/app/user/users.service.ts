@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import {Subject} from 'rxjs/Subject';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import { Subject, BehaviorSubject } from 'rxjs';
+import { User } from './user.model';
 
-import {User} from './user.model';
 
 /**
  * UserService manages our current user
@@ -15,9 +14,6 @@ export class UserService {
   public setCurrentUser(newUser: User): void {
     this.currentUser.next(newUser);
   }
-
-  constructor() { }
-
 }
 
 export const userServiceInjectables: Array<any> = [
