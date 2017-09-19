@@ -3,7 +3,7 @@ import { User } from '../user/user.model';
 import { Thread } from '../thread/thread.model';
 import {MessagesService} from '../message/messages.service';
 import {Message} from '../message/message.model';
-import {ThreadService} from '../thread/threads.service';
+import {ThreadsService} from '../thread/threads.service';
 import {UserService} from '../user/users.service';
 import * as moment from 'moment';
 
@@ -54,7 +54,7 @@ const initialMessages: Array<Message> = [
 
 export class ChatExampleData {
   static init(messagesService: MessagesService,
-              threadsService: ThreadService,
+              threadsService: ThreadsService,
               UsersService: UserService): void {
 
     // TODO make `message` hot

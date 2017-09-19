@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MessagesService} from '../message/messages.service';
-import {ThreadService} from '../thread/threads.service';
+import {ThreadsService} from '../thread/threads.service';
 import {Message} from '../message/message.model';
 import {Thread} from '../thread/thread.model';
 import * as _ from 'lodash';
@@ -13,7 +13,7 @@ import * as _ from 'lodash';
 export class ChatNavBarComponent implements OnInit {
   unreadMessagesCount: number;
 
-  constructor(public messagesService: MessagesService, public threadsService: ThreadService) { }
+  constructor(public messagesService: MessagesService, public threadsService: ThreadsService) { }
 
   ngOnInit(): void {
     this.messagesService.messages.combineLatest(

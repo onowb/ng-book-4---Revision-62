@@ -3,7 +3,7 @@ import {Thread} from '../thread/thread.model';
 import {Message} from '../message/message.model';
 import {User} from '../user/user.model';
 import {MessagesService} from '../message/messages.service';
-import {ThreadService} from '../thread/threads.service';
+import {ThreadsService} from '../thread/threads.service';
 import {UserService} from '../user/users.service';
 import {Observable} from 'rxjs/Observable';
 
@@ -21,7 +21,7 @@ export class ChatWindowComponent implements OnInit {
   currentUser: User;
 
   constructor(public messagesService: MessagesService,
-              public threadsService: ThreadService,
+              public threadsService: ThreadsService,
               public UsersService: UserService,
               public el: ElementRef) {
   }
