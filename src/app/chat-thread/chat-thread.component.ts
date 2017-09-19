@@ -1,28 +1,37 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Thread} from '../thread/thread.model';
-import {ThreadService} from '../thread/thread.service';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
+import { Observable } from 'rxjs';
+import { ThreadsService } from './../thread/threads.service';
+import { Thread } from '../thread/thread.model';
 
 @Component({
-  selector: 'app-chat-thread',
+  selector: 'chat-thread',
   templateUrl: './chat-thread.component.html',
   styleUrls: ['./chat-thread.component.css']
 })
 export class ChatThreadComponent implements OnInit {
-
   @Input() thread: Thread;
   selected = false;
 
-  constructor(public threadService: ThreadService) { }
+  constructor(public threadsService: ThreadsService) {
+  }
 
   ngOnInit(): void {
-    this.threadService.currentThread.subscribe((currentThread: Thread) => {
-      this.selected = currentThread && this.thread && (currentThread.id === this.thread.id);
-    });
+    this.threadsService.currentThread
+      .subscribe( (currentThread: Thread) => {
+        this.selected = currentThread &&
+          this.thread &&
+          (currentThread.id === this.thread.id);
+      });
   }
 
   clicked(event: any): void {
-    this.threadService.setCurrentThread(this.thread);
+    this.threadsService.setCurrentThread(this.thread);
     event.preventDefault();
   }
-
 }
