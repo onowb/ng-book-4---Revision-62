@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {MessagesService} from './messages/messages.service';
-import {ThreadService} from './thread/thread.service';
-import {UserService} from './user/user.service';
+import {MessagesService} from './message/messages.service';
+import {ThreadService} from './thread/threads.service';
+import {UserService} from './user/users.service';
 import {ChatExampleData} from './data/chat-example-data';
 
 @Component({

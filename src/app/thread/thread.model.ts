@@ -1,4 +1,4 @@
-import {Message} from '../messages/message.model';
+import {Message} from '../message/message.model';
 import {uuid} from '../util/uuid';
 
 /**

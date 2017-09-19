@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { ThreadService } from './thread.service';
+import { ThreadService } from './threads.service';
 
 describe('ThreadService', () => {
   beforeEach(() => {

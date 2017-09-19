@@ -1,7 +1,7 @@
 import {uuid} from '../util/uuid';
 
 /**
- * A User represents an agent that sends messages
+ * A User represents an agent that sends message
  */
 export class User {
   id: string;

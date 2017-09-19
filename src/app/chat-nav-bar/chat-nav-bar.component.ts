@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MessagesService} from '../messages/messages.service';
-import {ThreadService} from '../thread/thread.service';
-import {Message} from '../messages/message.model';
+import {MessagesService} from '../message/messages.service';
+import {ThreadService} from '../thread/threads.service';
+import {Message} from '../message/message.model';
 import {Thread} from '../thread/thread.model';
 import * as _ from 'lodash';
 
@@ -29,7 +29,7 @@ export class ChatNavBarComponent implements OnInit {
                 currentThread &&
                 (currentThread.id === m.thread.id);
               // note: in a "real" app you should also exclude
-              // messages that were authored by the current user b/c they've
+              // message that were authored by the current user b/c they've
               // already been "read"
               if (m && !m.isRead && !messageIsInCurrentThread) {
                 sum = sum + 1;

@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { MessagesService } from './messages/messages.service';
-import { UserService } from './user/user.service';
-import { ThreadService } from './thread/thread.service';
+import { MessagesService } from './message/messages.service';
+import { UserService } from './user/users.service';
+import { ThreadService } from './thread/threads.service';
 
 import { AppComponent } from './app.component';
 import { ChatMessageComponent } from './chat-message/chat-message.component';

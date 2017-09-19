@@ -1,10 +1,10 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
 import {Thread} from '../thread/thread.model';
-import {Message} from '../messages/message.model';
+import {Message} from '../message/message.model';
 import {User} from '../user/user.model';
-import {MessagesService} from '../messages/messages.service';
-import {ThreadService} from '../thread/thread.service';
-import {UserService} from '../user/user.service';
+import {MessagesService} from '../message/messages.service';
+import {ThreadService} from '../thread/threads.service';
+import {UserService} from '../user/users.service';
 import {Observable} from 'rxjs/Observable';
 
 

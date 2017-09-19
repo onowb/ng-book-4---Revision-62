@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Thread} from '../thread/thread.model';
-import {ThreadService} from '../thread/thread.service';
+import {ThreadService} from '../thread/threads.service';
 
 @Component({
   selector: 'app-chat-thread',

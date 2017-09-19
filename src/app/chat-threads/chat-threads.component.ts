@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {ThreadService} from '../thread/thread.service';
+import {ThreadService} from '../thread/threads.service';
 
 
 @Component({

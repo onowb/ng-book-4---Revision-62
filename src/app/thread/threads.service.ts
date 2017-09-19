@@ -3,11 +3,11 @@ import {Observable} from 'rxjs/Observable';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import * as _ from 'lodash';
 import 'rxjs/add/operator/combineLatest';
+import {Subject} from 'rxjs/Subject';
 
 import {Thread} from './thread.model';
-import {Subject} from 'rxjs/Subject';
-import {Message} from '../messages/message.model';
-import {MessagesService} from '../messages/messages.service';
+import {Message} from '../message/message.model';
+import {MessagesService} from '../message/messages.service';
 
 
 @Injectable()
@@ -22,7 +22,7 @@ export class ThreadService {
   // `currentThread` contains the currently selected thread
   currentThread: Subject<Thread> = new BehaviorSubject<Thread>(new Thread());
 
-  // `currentThreadMessages` contains the set of messages for the currently
+  // `currentThreadMessages` contains the set of message for the currently
   // selected thread
   currentThreadMessages: Observable<Message[]>;
 

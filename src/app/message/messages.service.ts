@@ -17,15 +17,15 @@ interface IMessagesOperation extends Function {
 
 @Injectable()
 export class MessagesService {
-  // a stream that publishes new messages only once
+  // a stream that publishes new message only once
   newMessages: Subject<Message> = new Subject<Message>();
 
-  // `messages` is a stream that emits an array of the most up to date messages
+  // `message` is a stream that emits an array of the most up to date message
   messages: Observable<Message[]>;
 
-  // `updates` receives _operations_ to be applied to our `messages`
-  // it's a way we can perform changes on *all* messages (that are currently
-  // stored in `messages`)
+  // `updates` receives _operations_ to be applied to our `message`
+  // it's a way we can perform changes on *all* message (that are currently
+  // stored in `message`)
   updates: Subject<any> = new Subject<any>();
 
   // action streams
@@ -34,17 +34,17 @@ export class MessagesService {
 
   constructor() {
     this.messages = this.updates
-    // watch the updates and accumulate operations on the messages
+    // watch the updates and accumulate operations on the message
       .scan((messages: Message[], operation: IMessagesOperation) => {
       return operation(messages);
     }, initialMessages)
-    // make sure we can share the most recent list of messages across anyone
+    // make sure we can share the most recent list of message across anyone
     // who's interested in subscribing and cache the last known list of
-    // messages
+    // message
     .publishReplay(1).refCount();
 
     // `create` takes a Message and then puts an operation (the inner function)
-    // on the `updates` stream to add the Message to the list of messages.
+    // on the `updates` stream to add the Message to the list of message.
     //
     // That is, for each item that gets added to `create` (by using `next`)
     // this stream emits a concat operation function.

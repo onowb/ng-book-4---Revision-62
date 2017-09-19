@@ -1,10 +1,10 @@
 /* tslint:disable:max-line-length */
 import { User } from '../user/user.model';
 import { Thread } from '../thread/thread.model';
-import {MessagesService} from '../messages/messages.service';
-import {Message} from '../messages/message.model';
-import {ThreadService} from '../thread/thread.service';
-import {UserService} from '../user/user.service';
+import {MessagesService} from '../message/messages.service';
+import {Message} from '../message/message.model';
+import {ThreadService} from '../thread/threads.service';
+import {UserService} from '../user/users.service';
 import * as moment from 'moment';
 
 // the person using the app us Juliet
@@ -57,13 +57,13 @@ export class ChatExampleData {
               threadsService: ThreadService,
               UsersService: UserService): void {
 
-    // TODO make `messages` hot
+    // TODO make `message` hot
     messagesService.messages.subscribe(() => ({}));
 
     // set "Juliet" as the current user
     UsersService.setCurrentUser(me);
 
-    // create the initial messages
+    // create the initial message
     initialMessages.map( (message: Message) => messagesService.addMessage(message) );
 
     threadsService.setCurrentThread(tEcho);
