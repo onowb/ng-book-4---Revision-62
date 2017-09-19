@@ -1,20 +1,26 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
-import {Thread} from '../thread/thread.model';
-import {Message} from '../message/message.model';
-import {User} from '../user/user.model';
-import {MessagesService} from '../message/messages.service';
-import {ThreadsService} from '../thread/threads.service';
-import {UserService} from '../user/users.service';
-import {Observable} from 'rxjs/Observable';
+import {
+  Component,
+  Inject,
+  ElementRef,
+  OnInit,
+  ChangeDetectionStrategy
+} from '@angular/core';
+import { Observable } from 'rxjs';
 
+import { User } from '../user/user.model';
+import { UsersService } from '../user/users.service';
+import { Thread } from '../thread/thread.model';
+import { ThreadsService } from '../thread/threads.service';
+import { Message } from '../message/message.model';
+import { MessagesService } from '../message/messages.service';
 
 @Component({
-  selector: 'app-chat-window',
+  selector: 'chat-window',
   templateUrl: './chat-window.component.html',
-  styleUrls: ['./chat-window.component.css']
+  styleUrls: ['./chat-window.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChatWindowComponent implements OnInit {
-
   messages: Observable<any>;
   currentThread: Thread;
   draftMessage: Message;
@@ -22,7 +28,7 @@ export class ChatWindowComponent implements OnInit {
 
   constructor(public messagesService: MessagesService,
               public threadsService: ThreadsService,
-              public UsersService: UserService,
+              public UsersService: UsersService,
               public el: ElementRef) {
   }
 
@@ -70,5 +76,4 @@ export class ChatWindowComponent implements OnInit {
       .nativeElement.querySelector('.msg-container-base');
     scrollPane.scrollTop = scrollPane.scrollHeight;
   }
-
 }

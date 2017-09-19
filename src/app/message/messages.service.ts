@@ -1,16 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/operator/filter';
-// import 'rxjs/add/operator/scan';
-// import 'rxjs/add/operator/publishReplay';
-// import {Subject} from 'rxjs/Subject';
-// import {Observable} from 'rxjs/Observable';
-
-import {Message} from './message.model';
-import {Thread} from '../thread/thread.model';
-import {User} from '../user/user.model';
-
+import { User } from '../user/user.model';
+import { Thread } from '../thread/thread.model';
+import { Message } from '../message/message.model';
 
 const initialMessages: Message[] = [];
 
@@ -37,12 +29,12 @@ export class MessagesService {
 
   constructor() {
     this.messages = this.updates
-    // watch the updates and accumulate operations on the messages
+      // watch the updates and accumulate operations on the messages
       .scan((messages: Message[],
              operation: IMessagesOperation) => {
-          return operation(messages);
-        },
-        initialMessages)
+               return operation(messages);
+             },
+            initialMessages)
       // make sure we can share the most recent list of messages across anyone
       // who's interested in subscribing and cache the last known list of
       // messages
@@ -102,10 +94,10 @@ export class MessagesService {
   messagesForThreadUser(thread: Thread, user: User): Observable<Message> {
     return this.newMessages
       .filter((message: Message) => {
-        // belongs to this thread
+               // belongs to this thread
         return (message.thread.id === thread.id) &&
-          // and isn't authored by this user
-          (message.author.id !== user.id);
+               // and isn't authored by this user
+               (message.author.id !== user.id);
       });
   }
 }

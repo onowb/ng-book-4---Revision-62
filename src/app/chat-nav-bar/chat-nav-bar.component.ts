@@ -1,23 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import {MessagesService} from '../message/messages.service';
-import {ThreadsService} from '../thread/threads.service';
-import {Message} from '../message/message.model';
-import {Thread} from '../thread/thread.model';
+import {
+  Component,
+  Inject,
+  OnInit
+} from '@angular/core';
 import * as _ from 'lodash';
 
+import { ThreadsService } from './../thread/threads.service';
+import { MessagesService } from './../message/messages.service';
+
+import { Thread } from './../thread/thread.model';
+import { Message } from './../message/message.model';
+
 @Component({
-  selector: 'app-chat-nav-bar',
+  selector: 'chat-nav-bar',
   templateUrl: './chat-nav-bar.component.html',
   styleUrls: ['./chat-nav-bar.component.css']
 })
 export class ChatNavBarComponent implements OnInit {
   unreadMessagesCount: number;
 
-  constructor(public messagesService: MessagesService, public threadsService: ThreadsService) { }
+  constructor(public messagesService: MessagesService,
+              public threadsService: ThreadsService) {
+  }
 
   ngOnInit(): void {
-    this.messagesService.messages.combineLatest(
-        this.threadsService.currentThread, (messages: Message[], currentThread: Thread) =>
+    this.messagesService.messages
+      .combineLatest(
+        this.threadsService.currentThread,
+        (messages: Message[], currentThread: Thread) =>
           [currentThread, messages] )
 
       .subscribe(([currentThread, messages]: [Thread, Message[]]) => {
@@ -29,7 +39,7 @@ export class ChatNavBarComponent implements OnInit {
                 currentThread &&
                 (currentThread.id === m.thread.id);
               // note: in a "real" app you should also exclude
-              // message that were authored by the current user b/c they've
+              // messages that were authored by the current user b/c they've
               // already been "read"
               if (m && !m.isRead && !messageIsInCurrentThread) {
                 sum = sum + 1;
@@ -39,5 +49,4 @@ export class ChatNavBarComponent implements OnInit {
             0);
       });
   }
-
 }
