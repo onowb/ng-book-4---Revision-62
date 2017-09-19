@@ -5,7 +5,7 @@ import {MessagesService} from '../messages/messages.service';
 import {Message} from '../messages/message.model';
 import {ThreadService} from '../thread/thread.service';
 import {UserService} from '../user/user.service';
-import moment = require('moment');
+import * as moment from 'moment';
 
 // the person using the app us Juliet
 const me: User      = new User('Juliet', 'assets/images/avatars/female-avatar-1.png');

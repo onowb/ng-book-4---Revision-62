@@ -6,6 +6,7 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Message} from '../messages/message.model';
 import {MessagesService} from '../messages/messages.service';
 import * as _ from 'lodash';
+import 'rxjs/add/operator/combineLatest';
 
 @Injectable()
 export class ThreadService {
