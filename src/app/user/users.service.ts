@@ -7,7 +7,7 @@ import { User } from './user.model';
  * UserService manages our current user
  */
 @Injectable()
-export class UserService {
+export class UsersService {
   // `currentUser` contains the current user
   currentUser: Subject<User> = new BehaviorSubject<User>(null);
 
@@ -17,5 +17,5 @@ export class UserService {
 }
 
 export const userServiceInjectables: Array<any> = [
-  UserService
+  UsersService
 ];

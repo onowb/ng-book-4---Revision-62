@@ -4,7 +4,7 @@ import { Thread } from '../thread/thread.model';
 import {MessagesService} from '../message/messages.service';
 import {Message} from '../message/message.model';
 import {ThreadsService} from '../thread/threads.service';
-import {UserService} from '../user/users.service';
+import {UsersService} from '../user/users.service';
 import * as moment from 'moment';
 
 // the person using the app us Juliet
@@ -55,7 +55,7 @@ const initialMessages: Array<Message> = [
 export class ChatExampleData {
   static init(messagesService: MessagesService,
               threadsService: ThreadsService,
-              UsersService: UserService): void {
+              UsersService: UsersService): void {
 
     // TODO make `message` hot
     messagesService.messages.subscribe(() => ({}));

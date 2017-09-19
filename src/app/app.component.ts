@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {MessagesService} from './message/messages.service';
 import {ThreadsService} from './thread/threads.service';
-import {UserService} from './user/users.service';
+import {UsersService} from './user/users.service';
 import {ChatExampleData} from './data/chat-example-data';
 
 @Component({
@@ -12,7 +12,7 @@ import {ChatExampleData} from './data/chat-example-data';
 export class AppComponent {
   constructor(public messagesService: MessagesService,
               public threadsService: ThreadsService,
-              public usersService: UserService) {
+              public usersService: UsersService) {
     ChatExampleData.init(messagesService, this.threadsService, this.usersService);
   }
 }

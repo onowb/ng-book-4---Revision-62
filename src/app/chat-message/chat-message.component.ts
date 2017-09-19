@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Message} from '../message/message.model';
 import {User} from '../user/user.model';
-import {UserService} from '../user/users.service';
+import {UsersService} from '../user/users.service';
 
 @Component({
   selector: 'app-chat-message',
@@ -13,7 +13,7 @@ export class ChatMessageComponent implements OnInit {
   currentUser: User;
   incoming: boolean;
 
-  constructor(public UsersService: UserService) {
+  constructor(public UsersService: UsersService) {
   }
 
   ngOnInit(): void {

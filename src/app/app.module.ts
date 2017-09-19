@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { MessagesService } from './message/messages.service';
-import { UserService } from './user/users.service';
+import { UsersService } from './user/users.service';
 import { ThreadsService } from './thread/threads.service';
 
 import { AppComponent } from './app.component';
@@ -32,7 +32,7 @@ import { FromNowPipe } from './pipes/from-now.pipe';
     FormsModule,
     HttpModule
   ],
-  providers: [MessagesService, UserService, ThreadsService],
+  providers: [MessagesService, UsersService, ThreadsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
