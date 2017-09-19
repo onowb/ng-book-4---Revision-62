@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
+import { Subject, Observable } from 'rxjs';
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/filter';
+// import 'rxjs/add/operator/scan';
+// import 'rxjs/add/operator/publishReplay';
+// import {Subject} from 'rxjs/Subject';
+// import {Observable} from 'rxjs/Observable';
+
 import {Message} from './message.model';
-import {Subject} from 'rxjs/Subject';
-import {Observable} from 'rxjs/Observable';
 import {Thread} from '../thread/thread.model';
 import {User} from '../user/user.model';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/scan';
-import 'rxjs/add/operator/publishReplay';
+
 
 const initialMessages: Message[] = [];
 
