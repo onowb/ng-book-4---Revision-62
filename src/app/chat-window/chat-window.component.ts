@@ -1,11 +1,5 @@
-import {
-  Component,
-  Inject,
-  ElementRef,
-  OnInit,
-  ChangeDetectionStrategy
-} from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, ElementRef, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {Observable} from 'rxjs/Observable';
 
 import { User } from '../user/user.model';
 import { UsersService } from '../user/users.service';

@@ -1,5 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
+
+// Kalau di aktifkan malah terjadi Error
+// import { Observable } from 'rxjs/Observable';
+// import { Subject } from 'rxjs/Subject';
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/filter';
+// import 'rxjs/add/operator/scan';
+// import 'rxjs/add/operator/publishReplay';
+
 import { User } from '../user/user.model';
 import { Thread } from '../thread/thread.model';
 import { Message } from '../message/message.model';

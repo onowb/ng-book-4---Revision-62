@@ -1,8 +1,4 @@
-import {
-  Component,
-  Inject,
-  OnInit
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
 
 import { ThreadsService } from './../thread/threads.service';
