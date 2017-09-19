@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Subject} from 'rxjs/Subject';
-import {User} from './user.model';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+
+import {User} from './user.model';
 
 /**
  * UserService manages our current user

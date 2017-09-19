@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {Thread} from './thread.model';
-import {Subject} from 'rxjs/Subject';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {Message} from '../messages/message.model';
-import {MessagesService} from '../messages/messages.service';
 import * as _ from 'lodash';
 import 'rxjs/add/operator/combineLatest';
+
+import {Thread} from './thread.model';
+import {Subject} from 'rxjs/Subject';
+import {Message} from '../messages/message.model';
+import {MessagesService} from '../messages/messages.service';
+
 
 @Injectable()
 export class ThreadService {

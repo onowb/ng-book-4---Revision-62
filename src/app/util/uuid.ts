@@ -2,7 +2,6 @@
 /* tslint:disable:no-bitwise no-var-keyword typedef */
 
 // taken from TodoMVC
-
 export function uuid() {
   var i, random;
   var result = '';
@@ -12,7 +11,9 @@ export function uuid() {
     if (i === 8 || i === 12 || i === 16 || i === 20) {
       result += '-';
     }
-    result += (i === 12 ? 4 : (i === 16 ? (random & 3 | 8) : random )).toString(16);
+    result += (i === 12 ? 4 : (i === 16 ? (random & 3 | 8) : random))
+      .toString(16);
   }
+
   return result;
 }
