@@ -1,7 +1,17 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Message} from '../message/message.model';
-import {User} from '../user/user.model';
-import {UsersService} from '../user/users.service';
+import {
+  Component,
+  OnInit,
+  Input
+} from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { UsersService } from './../user/users.service';
+import { ThreadsService } from './../thread/threads.service';
+import { MessagesService } from './../message/messages.service';
+
+import { Message } from './../message/message.model';
+import { Thread } from './../thread/thread.model';
+import { User } from './../user/user.model';
 
 @Component({
   selector: 'app-chat-message',
@@ -27,4 +37,3 @@ export class ChatMessageComponent implements OnInit {
         });
   }
 }
-
