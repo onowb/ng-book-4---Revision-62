@@ -46,7 +46,8 @@ export class ThreadService {
       return _.sortBy(threads, (t: Thread) => t.lastMessage.sentAt).reverse();
     });
 
-    this.currentThreadMessages = this.currentThread.combineLatest(messagesService.messages, (currentThread: Thread, messages: Message[]) => {
+    this.currentThreadMessages = this.currentThread
+      .combineLatest(messagesService.messages, (currentThread: Thread, messages: Message[]) => {
           if (currentThread && messages.length > 0) {
             return _.chain(messages)
               .filter((message: Message) =>

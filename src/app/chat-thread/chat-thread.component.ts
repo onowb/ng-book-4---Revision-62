@@ -10,7 +10,7 @@ import {ThreadService} from '../thread/thread.service';
 export class ChatThreadComponent implements OnInit {
 
   @Input() thread: Thread;
-  selected: boolean = false;
+  selected = false;
 
   constructor(public threadService: ThreadService) { }
 
