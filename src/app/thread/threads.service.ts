@@ -1,14 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Subject, BehaviorSubject, Observable } from 'rxjs';
-// import {Observable} from 'rxjs/Observable';
-// import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-// import {Subject} from 'rxjs/Subject';
+import { Thread } from './thread.model';
+import { Message } from '../message/message.model';
+import { MessagesService } from '../message/messages.service';
 import * as _ from 'lodash';
-
-import {Thread} from './thread.model';
-import {Message} from '../message/message.model';
-import {MessagesService} from '../message/messages.service';
-
 
 @Injectable()
 export class ThreadsService {
@@ -40,7 +35,7 @@ export class ThreadsService {
           // Cache the most recent message for each thread
           const messagesThread: Thread = threads[message.thread.id];
           if (!messagesThread.lastMessage ||
-            messagesThread.lastMessage.sentAt < message.sentAt) {
+              messagesThread.lastMessage.sentAt < message.sentAt) {
             messagesThread.lastMessage = message;
           }
         });
@@ -55,19 +50,19 @@ export class ThreadsService {
 
     this.currentThreadMessages = this.currentThread
       .combineLatest(messagesService.messages,
-        (currentThread: Thread, messages: Message[]) => {
-          if (currentThread && messages.length > 0) {
-            return _.chain(messages)
-              .filter((message: Message) =>
-                (message.thread.id === currentThread.id))
-              .map((message: Message) => {
-                message.isRead = true;
-                return message; })
-              .value();
-          } else {
-            return [];
-          }
-        });
+                     (currentThread: Thread, messages: Message[]) => {
+        if (currentThread && messages.length > 0) {
+          return _.chain(messages)
+            .filter((message: Message) =>
+                    (message.thread.id === currentThread.id))
+            .map((message: Message) => {
+              message.isRead = true;
+              return message; })
+            .value();
+        } else {
+          return [];
+        }
+      });
 
     this.currentThread.subscribe(this.messagesService.markThreadAsRead);
   }
@@ -81,4 +76,3 @@ export class ThreadsService {
 export const threadsServiceInjectables: Array<any> = [
   ThreadsService
 ];
-
