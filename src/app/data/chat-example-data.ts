@@ -1,10 +1,10 @@
 /* tslint:disable:max-line-length */
 import { User } from '../user/user.model';
 import { Thread } from '../thread/thread.model';
-import {MessagesService} from '../message/messages.service';
-import {Message} from '../message/message.model';
-import {ThreadsService} from '../thread/threads.service';
-import {UsersService} from '../user/users.service';
+import { Message } from '../message/message.model';
+import { MessagesService } from '../message/messages.service';
+import { ThreadsService } from '../thread/threads.service';
+import { UsersService } from '../user/users.service';
 import * as moment from 'moment';
 
 // the person using the app us Juliet
@@ -57,13 +57,13 @@ export class ChatExampleData {
               threadsService: ThreadsService,
               UsersService: UsersService): void {
 
-    // TODO make `message` hot
+    // TODO make `messages` hot
     messagesService.messages.subscribe(() => ({}));
 
     // set "Juliet" as the current user
     UsersService.setCurrentUser(me);
 
-    // create the initial message
+    // create the initial messages
     initialMessages.map( (message: Message) => messagesService.addMessage(message) );
 
     threadsService.setCurrentThread(tEcho);
@@ -76,57 +76,57 @@ export class ChatExampleData {
     // echo bot
     messagesService.messagesForThreadUser(tEcho, echo)
       .forEach( (message: Message): void => {
-          messagesService.addMessage(
-            new Message({
-              author: echo,
-              text: message.text,
-              thread: tEcho
-            })
-          );
-        },
-        null);
+        messagesService.addMessage(
+          new Message({
+            author: echo,
+            text: message.text,
+            thread: tEcho
+          })
+        );
+      },
+                null);
 
 
     // reverse bot
     messagesService.messagesForThreadUser(tRev, rev)
       .forEach( (message: Message): void => {
-          messagesService.addMessage(
-            new Message({
-              author: rev,
-              text: message.text.split('').reverse().join(''),
-              thread: tRev
-            })
-          );
-        },
-        null);
+        messagesService.addMessage(
+          new Message({
+            author: rev,
+            text: message.text.split('').reverse().join(''),
+            thread: tRev
+          })
+        );
+      },
+                null);
 
     // waiting bot
     messagesService.messagesForThreadUser(tWait, wait)
       .forEach( (message: Message): void => {
 
-          let waitTime: number = parseInt(message.text, 10);
-          let reply: string;
+        let waitTime: number = parseInt(message.text, 10);
+        let reply: string;
 
-          if (isNaN(waitTime)) {
-            waitTime = 0;
-            reply = `I didn\'t understand ${message.text}. Try sending me a number`;
-          } else {
-            reply = `I waited ${waitTime} seconds to send you this.`;
-          }
+        if (isNaN(waitTime)) {
+          waitTime = 0;
+          reply = `I didn\'t understand ${message.text}. Try sending me a number`;
+        } else {
+          reply = `I waited ${waitTime} seconds to send you this.`;
+        }
 
-          setTimeout(
-            () => {
-              messagesService.addMessage(
-                new Message({
-                  author: wait,
-                  text: reply,
-                  thread: tWait
-                })
-              );
-            },
-            waitTime * 1000);
-        },
-        null);
+        setTimeout(
+          () => {
+            messagesService.addMessage(
+              new Message({
+                author: wait,
+                text: reply,
+                thread: tWait
+              })
+            );
+          },
+          waitTime * 1000);
+      },
+                null);
 
 
   }
