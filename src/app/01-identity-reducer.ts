@@ -3,12 +3,12 @@ interface Action {
   payload?: any;
 }
 
-interface Reduce<T> {
+interface Reducer<T> {
   (state: T, action: Action): T;
 }
 
-let reducer: Reduce<number> = (state: number, action: Action) => {
+let reducer: Reducer<number> = (state: number, action: Action) => {
   return state;
 };
 
-console.log(reducer(0, null)); // -> 0
+console.log( reducer(0, null) ); // -> 0

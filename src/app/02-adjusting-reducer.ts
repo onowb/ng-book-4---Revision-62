@@ -17,11 +17,11 @@ let reducer: Reducer<number> = (state: number, action: Action) => {
   return state;
 };
 
-let incrementAction: Action = { type: 'INCREMENT'};
+let incrementAction: Action = { type: 'INCREMENT' };
 
-console.log(reducer(0, incrementAction)); // -> 1
-console.log(reducer(1, incrementAction)); // -> 2
+console.log( reducer(0, incrementAction )); // -> 1
+console.log( reducer(1, incrementAction )); // -> 2
 
-let decrementAction: Action = {type: 'DECREMENT'};
+let decrementAction: Action = { type: 'DECREMENT' };
 
-console.log(reducer(100, decrementAction)); // -> 99
+console.log( reducer(100, decrementAction )); // -> 99
