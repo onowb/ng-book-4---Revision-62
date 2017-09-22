@@ -1,6 +1,7 @@
 /* tslint:disable:typedef */
 
-import {combineReducers, Reducer} from 'redux';
+// import {combineReducers, Reducer} from 'redux';
+import * as Redux from 'redux';
 
 import {UsersReducer, UsersState} from './user/users.reducer';
 export * from './user/users.reducer';
@@ -12,7 +13,7 @@ export interface AppState {
   threads: ThreadsState;
 }
 
-const rootReducer: Reducer<AppState> = combineReducers<AppState> ({
+const rootReducer: Redux.Reducer<AppState> = Redux.combineReducers<AppState> ({
   users: UsersReducer,
   threads: ThreadsReducer
 });

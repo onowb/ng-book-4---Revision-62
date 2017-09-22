@@ -11,7 +11,7 @@ import { AppState, default as reducer } from './app.reducer';
 
 export const AppStore = new InjectionToken('App.store');
 
-const devtools: Redux.StoreEnhancer<AppState> = window['devToolsEtension'] ? window['devToolsExtension'] () : f => f;
+const devtools: Redux.StoreEnhancer<AppState> = window['devToolsExtension'] ? window['devToolsExtension'] () : f => f;
 
 export function createAppStore(): Redux.Store<AppState> {
   return Redux.createStore<AppState>(
