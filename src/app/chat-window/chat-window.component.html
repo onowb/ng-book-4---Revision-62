@@ -13,6 +13,7 @@
           <div class="panel-buttons-container"  >
             <!-- you could put minimize or close buttons here -->
           </div>
+        </div>
 
           <div class="panel-body msg-container-base">
             <app-chat-message *ngFor="let message of currentThread.messages" [message]="message"></app-chat-message>
@@ -29,7 +30,6 @@
               </span>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </div>
