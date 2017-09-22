@@ -1,7 +1,7 @@
 <div class="msg-container" ngClass="{'base-sent': !incoming, 'base-receive': incoming}">
 
   <div class="avatar" *ngIf="!incoming">
-    <img src="{{messages.author.avatarSrc}}">
+    <img src="{{message.author.avatarSrc}}">
   </div>
 
   <div class="messages" [ngClass]="{'msg-sent': !incoming, 'msg-receive': incoming}">

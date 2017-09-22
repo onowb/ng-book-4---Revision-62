@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {Store} from 'redux';
+import * as Redux from 'redux';
 
 import {Thread} from '../thread/thread.model';
 import {AppStore} from '../app.store';
@@ -16,7 +16,7 @@ export class ChatThreadsComponent implements OnInit {
   threads: Thread[];
   currentThreadId: string;
 
-  constructor(@Inject(AppStore) private store: Store<AppState>) {
+  constructor(@Inject(AppStore) private store: Redux.Store<AppState>) {
     store.subscribe( () => this.updateState());
     this.updateState();
   }

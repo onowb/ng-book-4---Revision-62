@@ -1,5 +1,5 @@
 import {Component, ElementRef, Inject, OnInit} from '@angular/core';
-import {Store} from 'redux';
+import * as Redux from 'redux';
 
 import {Thread} from '../thread/thread.model';
 import {User} from '../user/user.model';
@@ -19,7 +19,7 @@ export class ChatWindowComponent implements OnInit {
   draftMessage: { text: string };
   currentUser: User;
 
-  constructor(@Inject(AppStore) private store: Store<AppState>, private el: ElementRef) {
+  constructor(@Inject(AppStore) private store: Redux.Store<AppState>, private el: ElementRef) {
     store.subscribe( () => this.updateState() );
     this.updateState();
     this.draftMessage = { text: '' };

@@ -15,7 +15,7 @@
           </div>
 
           <div class="panel-body msg-container-base">
-            <app-chat-message *ngIf="let message of currentThread.messages" [message]="message"></app-chat-message>
+            <app-chat-message *ngFor="let message of currentThread.messages" [message]="message"></app-chat-message>
           </div>
 
           <div class="panel-footer">
