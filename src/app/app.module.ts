@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
-import { AppState, default as reducer } from './app.reducer';
-import { AppStore, appStoreProviders } from './app.store';
+import { appStoreProviders } from './app.store';
 
 import { AppComponent } from './app.component';
 import { ChatMessageComponent } from './chat-message/chat-message.component';
