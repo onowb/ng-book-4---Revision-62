@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AppState, default as reducer } from './app.reducer';
+import { AppStore, appStoreProviders } from './app.store';
+
 import { AppComponent } from './app.component';
 import { ChatMessageComponent } from './chat-message/chat-message.component';
 import { ChatThreadComponent } from './chat-thread/chat-thread.component';
@@ -24,7 +27,7 @@ import { FromNowPipe } from './pipes/from-now.pipe';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [appStoreProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
