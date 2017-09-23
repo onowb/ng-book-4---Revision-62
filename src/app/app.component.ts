@@ -10,6 +10,6 @@ import {ExampleDef} from './example.modul';
 export class AppComponent {
   constructor(
     private router: Router,
-    @Inject('ExampleDefs') public exmaples: ExampleDef
-  ) {}
+    @Inject('ExampleDefs') public examples: ExampleDef[]) {
+  }
 }
