@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import { Profile } from './profile.model';
 
 @Component({
   selector: 'app-default-change-detection',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class DefaultChangeDetectionComponent implements OnInit {
+  @Input() profile: Profile;
 
   constructor() { }
 
