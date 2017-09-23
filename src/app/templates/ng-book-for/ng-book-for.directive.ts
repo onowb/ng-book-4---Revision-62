@@ -27,7 +27,7 @@ export class NgBookForDirective implements DoCheck {
   @Input() set appNgBookForOf(items) {
     this.items = items;
     if (this.items && !this.differ) {
-      this.differ = this.differs.find(items).create(this.changeDetector);
+      this.differ = this.differs.find(items).create(null);
     }
   }
 
