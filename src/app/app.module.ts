@@ -30,10 +30,10 @@ import { NgBookIfDemoComponent } from './templates/ng-book-if/ng-book-if-demo.co
 import { ObservablesDemoComponent } from './change-detection/observables-demo/observables-demo.component';
 import { OnPushDemoComponent } from './change-detection/on-push-demo/on-push-demo.component';
 import { PopupDemoComponent } from './host/popup-demo/popup-demo.component';
-// import { PopupDemoComponent1 } from './host/popup-demo/steps/host-1';
-// import { PopupDemoComponent2 } from './host/popup-demo/steps/host-2';
-// import { PopupDemoComponent3 } from './host/popup-demo/steps/host-3';
-// import { PopupDemoComponent4 } from './host/popup-demo/steps/host-4';
+import { PopupDemoComponent1 } from './host/popup-demo/steps/host-1';
+import { PopupDemoComponent2 } from './host/popup-demo/steps/host-2';
+import { PopupDemoComponent3 } from './host/popup-demo/steps/host-3';
+import { PopupDemoComponent4 } from './host/popup-demo/steps/host-4';
 import { ContentProjectionDemoComponent } from './content-projection/content-projection-demo/content-projection-demo.component';
 import { ContentTabsDemoComponent } from './tabs/content-tabs-demo/content-tabs-demo.component';
 import { OnInitDemoComponent } from './lifecycle/on-init/on-init-demo.component';
@@ -47,10 +47,10 @@ import { AllHooksDemoComponent } from './lifecycle/all-hooks/all-hooks-demo.comp
 const examples: ExampleDef[] = [ /* tslint:disable:max-line-length */
   {label: 'Intro',                            name: 'Root',                       path: '',                       component: IntroComponent},
   {label: 'Styling',                          name: 'Styling',                    path: 'styling',                component: StylingDemoComponent },
-  // {label: 'Modifying the Host (Step 1)',      name: 'Host1',                      path: 'host-step-1',            component: PopupDemoComponent1, dev: true},
-  // {label: 'Modifying the Host (Step 2)',      name: 'Host2',                      path: 'host-step-2',            component: PopupDemoComponent2, dev: true},
-  // {label: 'Modifying the Host (Step 3)',      name: 'Host3',                      path: 'host-step-3',            component: PopupDemoComponent3, dev: true},
-  // {label: 'Modifying the Host (Step 4)',      name: 'Host4',                      path: 'host-step-4',            component: PopupDemoComponent4, dev: true},
+  {label: 'Modifying the Host (Step 1)',      name: 'Host1',                      path: 'host-step-1',            component: PopupDemoComponent1 },
+  {label: 'Modifying the Host (Step 2)',      name: 'Host2',                      path: 'host-step-2',            component: PopupDemoComponent2 },
+  {label: 'Modifying the Host (Step 3)',      name: 'Host3',                      path: 'host-step-3',            component: PopupDemoComponent3 },
+  {label: 'Modifying the Host (Step 4)',      name: 'Host4',                      path: 'host-step-4',            component: PopupDemoComponent4 },
   {label: 'Popup - Modifying the Host',       name: 'Host',                       path: 'host-final',             component: PopupDemoComponent},
   {label: 'Tabs - Component Querying',        name: 'Tabs',                       path: 'tabs',                   component: ContentTabsDemoComponent},
   {label: 'Lifecycle 1 - OnInit / OnDestroy', name: 'Lifecycle1',                 path: 'lifecycle-hooks-1',      component: OnInitDemoComponent },
@@ -88,10 +88,10 @@ const routes: Routes = [
   { path: 'content-projection', component: ContentProjectionDemoComponent, pathMatch: 'full' },
   { path: 'tabs', component: ContentTabsDemoComponent, pathMatch: 'full' },
   { path: 'host-final', component: PopupDemoComponent, pathMatch: 'full' },
-  // { path: 'host-step-1', component: PopupDemoComponent1, pathMatch: 'full' },
-  // { path: 'host-step-2', component: PopupDemoComponent2, pathMatch: 'full' },
-  // { path: 'host-step-3', component: PopupDemoComponent3, pathMatch: 'full' },
-  // { path: 'host-step-4', component: PopupDemoComponent4, pathMatch: 'full' },
+  { path: 'host-step-1', component: PopupDemoComponent1, pathMatch: 'full' },
+  { path: 'host-step-2', component: PopupDemoComponent2, pathMatch: 'full' },
+  { path: 'host-step-3', component: PopupDemoComponent3, pathMatch: 'full' },
+  { path: 'host-step-4', component: PopupDemoComponent4, pathMatch: 'full' },
   { path: 'lifecycle-hooks-1', component: OnInitDemoComponent, pathMatch: 'full' },
   { path: 'lifecycle-hooks-2', component: OnChangesDemoComponent, pathMatch: 'full' },
   { path: 'lifecycle-hooks-3', component: DiffersDemoComponent, pathMatch: 'full' },

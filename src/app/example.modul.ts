@@ -11,7 +11,7 @@
  * structure of a single example.
  */
 
-export interface ExampleDef{
+export interface ExampleDef {
   label: string;      // link label
   name: string;       // route name of the example
   path: string;       // route path

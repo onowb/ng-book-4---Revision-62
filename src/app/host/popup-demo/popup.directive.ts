@@ -1,10 +1,18 @@
-import { Directive } from '@angular/core';
+/* tslint:disable:directive-selector */
+import { Directive, Input, OnInit, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[appPopup]'
+  selector: '[popup]',
+  exportAs: 'popup'
 })
-export class PopupDirective {
+export class PopupDirective implements OnInit {
+  @Input() message: string;
 
-  constructor() { }
+  ngOnInit(): void {
+    console.log('message', this.message);
+  }
 
+  @HostListener('click') onClick(): void {
+    alert(this.message);
+  }
 }
