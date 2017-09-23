@@ -8,7 +8,12 @@ export class OnInitComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    console.log('On init');
+  }
+
+  ngOnDestroy(): void {
+    console.log('On destroy');
   }
 
 }

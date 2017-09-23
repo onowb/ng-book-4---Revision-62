@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { OnChangesComponent } from './on-changes/on-changes.component';
 import { OnInitComponent } from './on-init/on-init.component';
 import { AllHooksComponent } from './all-hooks/all-hooks.component';
@@ -14,6 +15,16 @@ import { OnInitDemoComponent } from './on-init/on-init-demo.component';
   imports: [
     CommonModule
   ],
-  declarations: [OnChangesComponent, OnInitComponent, AllHooksComponent, AllHooksDemoComponent, CommentComponent, CommentsListComponent, DiffersDemoComponent, OnChangesDemoComponent, OnInitDemoComponent]
+  declarations: [
+    OnChangesComponent,
+    OnInitComponent,
+    AllHooksComponent,
+    AllHooksDemoComponent,
+    CommentComponent,
+    CommentsListComponent,
+    DiffersDemoComponent,
+    OnChangesDemoComponent,
+    OnInitDemoComponent
+  ]
 })
 export class LifecycleModule { }

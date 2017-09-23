@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class AllHooksDemoComponent implements OnInit {
+  displayAfters = true;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleAfters(): void {
+    this.displayAfters = !this.displayAfters;
   }
 
 }

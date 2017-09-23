@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OnInitDemoComponent implements OnInit {
 
-  constructor() { }
+  display: boolean;
+
+  constructor() {
+    this.display = true;
+  }
+
+  toggle(): void {
+    this.display = !this.display;
+  }
 
   ngOnInit() {
   }
