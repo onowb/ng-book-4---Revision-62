@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-content-projection-demo',
-  template: `<p>app-content-projection-demo</p>`
+  template: `
+    <div app-message header="My Message">
+      This is the content of the message
+    </div>
+  `
 })
 export class ContentProjectionDemoComponent implements OnInit {
 
