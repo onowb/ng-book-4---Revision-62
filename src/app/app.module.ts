@@ -103,8 +103,7 @@ const routes: Routes = [
     AppComponent,
     IntroComponent,
     SidebarComponent,
-    SidebarItemComponent,
-    StylingDemoComponent
+    SidebarItemComponent
   ],
   imports: [
     BrowserModule,
