@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgBookIfDemoComponent implements OnInit {
 
-  constructor() { }
+  display: boolean;
+
+  constructor() {
+    this.display = true;
+  }
+
+  toggle() {
+    this.display = !this.display;
+  }
 
   ngOnInit() {
   }
